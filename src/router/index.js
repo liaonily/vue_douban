@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Movies from '@/components/Movies'
 import MovieList from '@/components/MovieSearch'
 import MovieDetail from '@/components/MovieDetail'
-import HelloWorld from '@/components/HelloWorld'
+import HomePage from '@/HomePage'
 import Books from '@/components/Books'
 import BookList from '@/components/BookSearch'
 import BookDetail from '@/components/BookDetail'
@@ -14,8 +14,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'HomePage',
+      component: HomePage
     },
     {
       path: '/movies',

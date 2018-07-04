@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <spinner v-if="loading" />
     <div v-if="moviesInTheaters.subjects">
       <div class="title">
@@ -35,10 +36,12 @@
 <script>
 import '@/assets/movie.css'
 import Spinner from '@/components/Spinner'
+import Header from './Header.vue'
 export default {
   name: 'Movies',
   components: {
-    Spinner
+    Spinner,
+    Header
   },
   data () {
     return {

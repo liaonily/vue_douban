@@ -1,21 +1,8 @@
 <template lang="html">
-  <div id="TalionNav">
-    <header class="TalionNav">
-      <div class="TalionNav-primary">
-        <nav>
-          <ul>
-            <li><router-link to="/movies" style="color: #2384E8;">电影</router-link></li>
-            <li><router-link to="/books" style="color: #2384E8;">图书</router-link></li>
-          </ul>
-
-        </nav>
-      </div>
-    </header>
-    <div class="search">
-      <input type="text" class="search-input" v-model.trim="query" @keyup.enter="search()" name="search"
-             placeholder="请输入搜索内容"/>
-      <img src="../assets/search-btn.png" alt="search-button" class="search-btn" @click="search()" />
-    </div>
+  <div class="search">
+    <input type="text" class="search-input" v-model.trim="query" @keyup.enter="search()" name="search"
+           placeholder="请输入搜索内容"/>
+    <img src="../assets/search-btn.png" alt="search-button" class="search-btn" @click="search()" />
   </div>
 </template>
 
@@ -44,52 +31,22 @@ export default {
 </script>
 
 <style scoped lang="css">
-  .TalionNav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 9999;
-    background: #fff;
-  }
-  .TalionNav a {
-    text-decoration: none;
-  }
-  .TalionNav-primary {
-    border-bottom: 1px solid #f3f3f3;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 18px;
-    background: #fff;
-    height: 47px;
-    box-sizing: border-box;
-    display: flex;
-  }
-  .TalionNav-primary nav ul{
-    padding: 0;
-  }
-  .TalionNav-primary nav li{
-    display: inline-block;
-    font-size: 15px;
-    margin-right: 19px;
-  }
-  .search {
-    background: #fff;
-    margin-top: 47px;
-    position: relative;
-  }
-  .search-input {
-    border: 0;
-    background: #f5f5f5;
-    padding: 10px 5px;
-    width: 100%;
-    outline: none;
+.search {
+  background: #fff;
+  position: relative;
+  margin-top: 20px;
+}
+.search-input {
+  border: 0;
+  background: #f5f5f5;
+  padding: 10px 5px;
+  width: 50%;
+  outline: none;
 }
 .search-btn {
   width: 20px;
-  position: absolute;
-  right: 5px;
-  top: 9px;
+  margin-bottom: -5px;
+  margin-left: -35px;
 }
 
 </style>
