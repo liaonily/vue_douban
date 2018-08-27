@@ -4,7 +4,7 @@
     <div v-if="books.length" v-for="book in books" :key="book.id" class="books">
         <h4>{{book.title}}</h4>
         <p><i>{{book.author}}</i></p>
-        <a href="javascript: void(0)"><img :src="book.images.large" alt="image" @click="getDetails(book)"></a>
+        <a href="javascript: void(0)"><img :src="attachImageUrl(book.images.medium)" alt="image" @click="getDetails(book)"></a>
         <p>{{book.summary}}</p>
     </div>
   </div>
@@ -50,6 +50,12 @@ export default {
     },
     getDetails (book) {
       this.$router.push({path: `/book/${book.id}`})
+    },
+    // 修改图片链接
+    attachImageUrl (srcUrl) {
+      if (srcUrl !== undefined) { // 将http://或https://替换成图片缓存网站的链接
+        return srcUrl.replace(/http\w{0,1}:\/\//g, 'http://images.weserv.nl/?url=')
+      }
     }
   }
 

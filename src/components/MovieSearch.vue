@@ -7,7 +7,7 @@
       <p><a href="javascript: void(0)" @click="loadMore()">显示更多</a></p>
       <div class="movies">
         <div class="movie" v-for="item in movies" :key="item.id">
-          <a href="javascript: void(0)" @click="getDetails(item)"><img :src="item.images.medium" width="160px" height="240px"></a>
+          <a href="javascript: void(0)" @click="getDetails(item)"><img :src="attachImageUrl(item.images.medium)" width="160px" height="240px"></a>
           <h3>{{item.title}}</h3>
         </div>
       </div>
@@ -64,6 +64,12 @@ export default {
     },
     getDetails (movie) {
       this.$router.push({path: `/movie/${movie.id}`})
+    },
+    // 修改图片链接
+    attachImageUrl (srcUrl) {
+      if (srcUrl !== undefined) { // 将http://或https://替换成图片缓存网站的链接
+        return srcUrl.replace(/http\w{0,1}:\/\//g, 'http://images.weserv.nl/?url=')
+      }
     }
   }
 }
