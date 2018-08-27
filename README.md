@@ -25,3 +25,21 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## APP
+# Home
+![home](md/d1.gif)
+# Movies
+![movies](md/d2.gif)
+# Loadmore
+![Loadmore](md/d3.gif)
+# MovieDetail
+![MovieDetail](md/d4.gif)
+# SearchMovie
+![SearchMovie](md/d5.gif)
+# Books
+![Books](md/d6.gif)
+# SearchBook
+![SearchBook](md/d7.gif)
+# BookDetail
+![BookDetail](md/d8.gif)
