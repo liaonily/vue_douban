@@ -4,7 +4,7 @@
       <h1>{{book.title}}</h1>
     </div>
     <div class="about">
-      <img :src="book.images.large" alt="book-cover">
+      <img :src="attachImageUrl(book.images.large)" alt="book-cover">
       <ul>
         <li>作者：{{book.author}}</li>
         <li>出版社：{{book.publisher}}</li>
@@ -45,6 +45,12 @@ export default {
         console.log(data)
         this.book = data
       })
+    },
+    // 修改图片链接
+    attachImageUrl (srcUrl) {
+      if (srcUrl !== undefined) { // 将http://或https://替换成图片缓存网站的链接
+        return srcUrl.replace(/http\w{0,1}:\/\//g, 'http://images.weserv.nl/?url=')
+      }
     }
   },
   mounted () {
